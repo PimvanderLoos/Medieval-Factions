@@ -130,7 +130,7 @@ processResources {
 }
 
 shadowJar {
-    archiveClassifier.set('all')
+    archiveClassifier.set('')
     mergeServiceFiles()
     dependencies {
         include(dependency('org.jetbrains.kotlin:kotlin-stdlib-jdk8'))
@@ -173,6 +173,10 @@ shadowJar {
     relocate 'org.jooq', 'com.dansplugins.factionsystem.shadow.org.jooq'
     relocate 'org.reactivestreams', 'com.dansplugins.factionsystem.shadow.org.reactivestreams'
     relocate 'preponderous.ponder', 'com.dansplugins.factionsystem.shadow.preponderous.ponder'
+}
+
+jar {
+    enabled = false
 }
 
 artifacts {
